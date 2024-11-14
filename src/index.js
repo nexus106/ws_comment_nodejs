@@ -7,7 +7,7 @@ s.on('connection',function(ws){
         console.log("Received: "+message);
 
         s.clients.forEach(function(client){
-            client.send(message);
+            client.send(String(message));
         });
     });
 
