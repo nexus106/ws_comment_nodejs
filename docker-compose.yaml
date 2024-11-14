@@ -1,0 +1,13 @@
+services:
+    app:
+      image: node:22.11.0
+      working_dir: /usr/src/app
+      tty: true
+      ports: 
+      - '5001:5001'
+      volumes:
+        - ./:/usr/src/app
+      command: >
+        bash -c "npm init -y &&
+        npm i ws --save &&
+        node src/index.js"
